@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      generic_json_converter_generator|generic_json_converter_builder:
+        enabled: true
+        generate_for:
+          exclude: ['**.g.dart']
+
+builders:
+  generic_json_converter_builder:
+    import: 'package:generic_json_converter_generator/builder.dart'
+    builder_factories: ['genericJsonConverterBuilder']
+    build_extensions: { '.dart': ['.generic_json_converter_generator.g.dart'] }
+    auto_apply: root_package
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+    runs_before: ['json_serializable|json_serializable']
