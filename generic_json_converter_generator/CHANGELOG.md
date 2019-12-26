@@ -3,3 +3,6 @@
 
 ## [0.0.2] - 2019/12/21
 * change the homepage
+
+## [0.0.3] - 2019/12/26
+* update analyzer version
