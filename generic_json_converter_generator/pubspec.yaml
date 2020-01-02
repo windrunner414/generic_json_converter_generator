@@ -1,6 +1,6 @@
 name: generic_json_converter_generator
 description: A generic json converter generator for json_serializable.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/windrunner414/generic_json_converter_generator
 
 environment:

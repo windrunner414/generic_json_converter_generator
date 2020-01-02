@@ -25,12 +25,12 @@ class GenericJsonConverterGenerator
       }
     }
     assert(source != null);
-    const String start = "@GenericJsonConverter([";
-    if (!source.startsWith(start)) {
+    int start = source.indexOf('[');
+    if (start == -1) {
       throw InvalidGenerationSourceError("classes can't be null or empty");
     }
     List<String> classes =
-        source.substring(start.length, source.length - 2).split(", ");
+        source.substring(start + 1, source.indexOf(']', start)).split(", ");
     if (classes[0].isEmpty) {
       throw InvalidGenerationSourceError("classes can't be null or empty");
     }
